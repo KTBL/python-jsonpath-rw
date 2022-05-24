@@ -150,6 +150,7 @@ class TestJsonPath(unittest.TestCase):
 
     def test_child_value(self):
         self.check_cases([('foo.baz', {'foo': {'baz': 3}}, [3]),
+                          ('foo.föäü', {'foo': {'föäü': 3}}, [3]),
                           ('foo.baz', {'foo': {'baz': [3]}}, [[3]]),
                           ('foo.baz.bizzle', {'foo': {'baz': {'bizzle': 5}}}, [5])])
 
